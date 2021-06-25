@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>The Earth</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="./files/favicon.ico" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="./styles/main.css">
+		<style>
+			.label {
+				background-color: black;
+				position: absolute;
+				z-index: 100;
+				padding: 5px
+			}
+		</style>
+	</head>
+
+	<body>
+		<video id="video" loop crossOrigin="anonymous" playsinline style="display:none">
+			<source src="textures/planets/out.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+		</video>
+		<div id="d">
+			<div id="info">
+				The Earth in Year 3000<br/>
+				<a href="https://github.com/tomsail" target="_blank" rel="noopener">tomsail</a> see other projects<br/>
+				<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> sketch, images by <a href="https://www.esri.com" target="_blank" rel="noopener">ESRI</a> 
+				and <a href="https://earthobservatory.nasa.gov/" target="_blank" rel="noopener">NASA</a> 
+
+			</div>
+		</div>
+		<script src="src/World/systems/three.js"></script>
+		<script src="src/World/systems/postprocessing.js"></script>
+		<script type="module" src='./src/main.js'></script>
+
+	</body>
+</html>
