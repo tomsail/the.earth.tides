@@ -19,7 +19,7 @@ function initParams(){
   const params = {
     map: 0,
     sunLight: 4,
-    earthRotation: 0.0009,
+    earthRotation: 0.002,
     showClouds: false,
     showBathy: false,
     showTides: true,
