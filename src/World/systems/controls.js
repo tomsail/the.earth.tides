@@ -18,7 +18,7 @@ function createControls(camera, canvas, rotation) {
 function initParams(){
   const params = {
     map: 0,
-    sunLight: 4,
+    sunLight: 2,
     earthRotation: 0.002,
     showClouds: false,
     showBathy: false,
@@ -47,7 +47,6 @@ function initGui(params, earth){
   // const adaptiveToneMappingGui = gui.addFolder( 'AdaptiveOnly' );
 
   gui.add( params, 'earthRotation', 0.000073, 0.003 );
-  gui.add( params, 'mapHeight', 1.6, 8 );
   gui.add( params, 'showClouds' ).name( 'Show clouds' );
   gui.add( params, 'showTides' ).name( 'Show tides' ).onChange( function ( val ) {
     switch ( val ) {
