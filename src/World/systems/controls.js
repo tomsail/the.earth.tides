@@ -31,6 +31,7 @@ function initParams(){
 
     adaptionRate: 2.0,
     opacityLights : 0.4,
+    nightLights : 0.8,
     mapHeight : 1.8
   };
   return params
