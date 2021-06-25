@@ -19,9 +19,10 @@ function initParams(){
   const params = {
     map: 0,
     sunLight: 4,
-    earthRotation: 0.000073,
-    showClouds: true,
+    earthRotation: 0.0009,
+    showClouds: false,
     showBathy: false,
+    showTides: true,
 
     enabled: true,
     avgLuminance: 1.3,
@@ -37,6 +38,8 @@ function initParams(){
 
 function initGui(params, earth){
   const gui = new GUI();
+  gui.close();
+
   // const sceneGui = gui.addFolder( 'Scenes' );
   // const toneMappingGui = gui.addFolder( 'ToneMapping' );
   // const staticToneMappingGui = gui.addFolder( 'StaticOnly' );
@@ -45,6 +48,16 @@ function initGui(params, earth){
   gui.add( params, 'earthRotation', 0.000073, 0.003 );
   gui.add( params, 'mapHeight', 1.6, 8 );
   gui.add( params, 'showClouds' ).name( 'Show clouds' );
+  gui.add( params, 'showTides' ).name( 'Show tides' ).onChange( function ( val ) {
+    switch ( val ) {
+      case true:
+        earth.loadVid()
+        break;
+      case false :
+        earth.loadTex()
+        break;
+    }
+  });
   gui.add( params, 'showBathy' ).name( 'Show Bathy' ).onChange( function ( val ) {
 
     switch ( val ) {
@@ -137,7 +150,6 @@ function initGui(params, earth){
   // toneMappingGui.add( params, 'maxLuminance', 1, 30 );
   // staticToneMappingGui.add( params, 'avgLuminance', 0.001, 2.0 );
   // adaptiveToneMappingGui.add( params, 'adaptionRate', 0.0, 10.0 );
-
 
 
   return (gui)

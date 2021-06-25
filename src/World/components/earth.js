@@ -2,7 +2,6 @@ import * as THREE from 'https://unpkg.com/three@0.124.0/build/three.module.js';
 let EARTH_R = 6.371; // in thousand of km
 let SCALE = 40;
 let earthMat;
-let earthMat1;
 const textureLoader = new THREE.TextureLoader();
 const video = document.getElementById( 'video' );
 video.play();
@@ -134,7 +133,7 @@ class Earth{
 	}
 
 	loadTex(){
-		textureLoader.load( 'textures/planets/world_50km_20150603_025500.jpg', ( tex ) =>  {
+		textureLoader.load( 'textures/planets/ea.jpg', ( tex ) =>  {
 			this.sphereMesh.material.map = tex;
 			this.sphereMesh.material.map.encoding = THREE.sRGBEncoding;
 			this.sphereMesh.material.needsUpdate = true;
@@ -146,7 +145,7 @@ class Earth{
 		this.sphereMesh.material.map.encoding = THREE.sRGBEncoding;
 	};
 	loadTex3000(){
-		textureLoader.load( 'textures/planets/earth_texture_hd_3000.jpg', ( tex ) =>  {
+		textureLoader.load( 'textures/planets/earth_texture_hd.jpg', ( tex ) =>  {
 			this.sphereMesh.material.map = tex;
 			this.sphereMesh.material.map.encoding = THREE.sRGBEncoding;
 			this.sphereMesh.material.needsUpdate = true;
