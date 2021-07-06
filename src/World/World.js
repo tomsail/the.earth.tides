@@ -23,7 +23,7 @@ let cameraCube;
 let cameraBG;
 
 // CAMERA ROTATION
-let camRotation = 0.0;  
+let camRotation = 0.2;  
 
 // PARTICLES
 let afterimagePass; // control alpha

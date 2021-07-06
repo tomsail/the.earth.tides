@@ -11,7 +11,7 @@ class Sun{
   constructor(params, renderer){
     this.params = params;
     this.renderer = renderer
-    this.ambient = new THREE.AmbientLight(0xcccccc);
+    this.ambient = new THREE.AmbientLight(0x333333);
     this.spotLight = new THREE.DirectionalLight(0xffffff, params.sunLight );
 
     // calculating the rectangular equatorial coordinates, in the earth referential

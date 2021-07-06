@@ -9,7 +9,7 @@ function createRenderer() {
   
   renderer.outputEncoding = THREE.sRGBEncoding;
   renderer.autoClear = false;
-
+  renderer.setClearColor( 0xffffff, 0);
   renderer.physicallyCorrectLights = true;
 
   return renderer;
