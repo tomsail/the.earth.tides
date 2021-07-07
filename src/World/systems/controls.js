@@ -48,100 +48,100 @@ function initGui(params, earth){
 
   gui.add( params, 'earthRotation', 0.000073, 0.003 );
   gui.add( params, 'showClouds' ).name( 'Show clouds' );
-  gui.add( params, 'showTides' ).name( 'Show tides' ).onChange( function ( val ) {
-    switch ( val ) {
-      case true:
-        earth.loadVid()
-        break;
-      case false :
-        earth.loadTex()
-        break;
-    }
-  });
-  gui.add( params, 'showBathy' ).name( 'Show Bathy' ).onChange( function ( val ) {
+  // gui.add( params, 'showTides' ).name( 'Show tides' ).onChange( function ( val ) {
+  //   switch ( val ) {
+  //     case true:
+  //       earth.loadVid()
+  //       break;
+  //     case false :
+  //       earth.loadTex()
+  //       break;
+  //   }
+  // });
+  // gui.add( params, 'showBathy' ).name( 'Show Bathy' ).onChange( function ( val ) {
 
-    switch ( val ) {
+  //   switch ( val ) {
 
-      case true:
-        console.log(params.map );
-        switch ( params.map ) {
-          case 0 : 
-            console.log('loading bathy')
-            earth.loadBathyTerrain();
-            earth.loadBathy();
-            earth.loadSpec();
-            break;
+  //     case true:
+  //       console.log(params.map );
+  //       switch ( params.map ) {
+  //         case 0 : 
+  //           console.log('loading bathy')
+  //           earth.loadBathyTerrain();
+  //           earth.loadBathy();
+  //           earth.loadSpec();
+  //           break;
 
-          case '1': 
-            console.log('loading bathy 3000')
-            earth.loadBathyTerrain();
-            earth.loadBathy3000();
-            earth.loadSpec3000();
-            break;
-        }
-        break;
+  //         case '1': 
+  //           console.log('loading bathy 3000')
+  //           earth.loadBathyTerrain();
+  //           earth.loadBathy3000();
+  //           earth.loadSpec3000();
+  //           break;
+  //       }
+  //       break;
 
-      case false:    
-        switch ( params.map ) {
-          case '0' : 
-            console.log('loading topo')  
-            earth.loadTerrain();
-            earth.loadTex();
-            earth.loadSpec()
-            break;
-          case '1': 
-            console.log('loading topo 3000')  
-            earth.loadTerrain3000();
-            earth.loadTex3000();
-            earth.loadSpec3000();
-            break;
-        }
-        break;
-      };
-  } );
-  gui.add( params, 'map', { 'now': 0, 'in 3000': 1 } ).onChange( function ( val ) {
-    switch ( val ) {
+  //     case false:    
+  //       switch ( params.map ) {
+  //         case '0' : 
+  //           console.log('loading topo')  
+  //           earth.loadTerrain();
+  //           earth.loadTex();
+  //           earth.loadSpec()
+  //           break;
+  //         case '1': 
+  //           console.log('loading topo 3000')  
+  //           earth.loadTerrain3000();
+  //           earth.loadTex3000();
+  //           earth.loadSpec3000();
+  //           break;
+  //       }
+  //       break;
+  //     };
+  // } );
+  // gui.add( params, 'map', { 'now': 0, 'in 3000': 1 } ).onChange( function ( val ) {
+  //   switch ( val ) {
 
-      case '0':
-        switch ( params.showBathy ) {
-          case true:
-            console.log('loading current map bathy')
-            earth.loadBathyTerrain();
-            earth.loadLights();
-            earth.loadBathy();
-            earth.loadSpec();
-            break;
-          case false:
-            console.log('loading current map')
-            earth.loadTerrain();
-            earth.loadTex();
-            earth.loadSpec()
-            earth.loadLights();
-            break;
-        }
-        break;
+  //     case '0':
+  //       switch ( params.showBathy ) {
+  //         case true:
+  //           console.log('loading current map bathy')
+  //           earth.loadBathyTerrain();
+  //           earth.loadLights();
+  //           earth.loadBathy();
+  //           earth.loadSpec();
+  //           break;
+  //         case false:
+  //           console.log('loading current map')
+  //           earth.loadTerrain();
+  //           earth.loadTex();
+  //           earth.loadSpec()
+  //           earth.loadLights();
+  //           break;
+  //       }
+  //       break;
 
-      case '1':
-        switch ( params.showBathy ) {
-          case true:
-            console.log('loading future map bathy')
-            earth.loadBathyTerrain();
-            earth.loadBathy3000();
-            earth.loadSpec3000();
-            earth.loadLights3000();
-            break;
-          case false:
-            console.log('loading future map')
-            earth.loadTerrain3000();
-            earth.loadTex3000();
-            earth.loadSpec3000();
-            earth.loadLights3000();
-            break;
-        }
-        break;
-    }
+  //     case '1':
+  //       switch ( params.showBathy ) {
+  //         case true:
+  //           console.log('loading future map bathy')
+  //           earth.loadBathyTerrain();
+  //           earth.loadBathy3000();
+  //           earth.loadSpec3000();
+  //           earth.loadLights3000();
+  //           break;
+  //         case false:
+  //           console.log('loading future map')
+  //           earth.loadTerrain3000();
+  //           earth.loadTex3000();
+  //           earth.loadSpec3000();
+  //           earth.loadLights3000();
+  //           break;
+  //       }
+  //       break;
+  //   }
 
-  } );
+  // } );
   // gui.add( params, 'sunLight', 0, 5 );
   // gui.add( params, 'opacityLights', 0.0, 1.0 );
 
