@@ -1,1 +1,1 @@
-see the site : https://tomsail.github.io/the.earth/
+see the site : https://tomsail.github.io/the.earth.tides
